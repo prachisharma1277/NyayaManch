@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom'; // Import for redirection
 import './LoginPage.css';
-import { FaEnvelope, FaLock } from 'react-icons/fa';
+import { FaEnvelope, FaLock, FaArrowLeft } from 'react-icons/fa';
 import { GoogleLogin } from '@react-oauth/google'; // Google Component
 import axios from 'axios';
  import { Link } from 'react-router-dom';
