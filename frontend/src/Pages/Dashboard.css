@@ -1,0 +1,207 @@
+/* Dashboard.css - Enhanced Dark Theme */
+
+/* --- Global & Layout --- */
+.db-wrapper {
+    background-color: #0d1117; /* Very dark background */
+    color: #c9d1d9; /* Light text for contrast */
+    padding: 30px 40px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+}
+
+/* --- Glow Card Effect (Central to the look) --- */
+.glow-card {
+    background-color: #161b22; /* Slightly lighter dark base for cards */
+    border: 1px solid #30363d; /* Subtle dark border */
+    border-radius: 12px;
+    padding: 20px;
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+    cursor: pointer;
+}
+
+.glow-card:hover {
+    transform: translateY(-3px); /* Lift effect */
+    border-color: #58a6ff55; /* Subtle blue highlight on hover */
+    box-shadow: 0 6px 20px rgba(88, 166, 255, 0.15); /* Blue shadow glow */
+}
+
+/* --- Top Bar & Title --- */
+.db-topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #30363d;
+}
+
+.db-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #58a6ff; /* Highlight color for the title */
+    margin: 0;
+}
+
+.db-status {
+    font-size: 14px;
+    color: #8b949e;
+    font-weight: 500;
+}
+
+.status-online {
+    color: #00d1c1; /* Teal/Green for 'Online' status */
+    font-weight: 600;
+}
+
+/* --- Upload Card --- */
+.db-upload-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 40px;
+    padding: 30px;
+    background-color: #1f3957; /* Slightly distinct background for primary action */
+    border-color: #58a6ff; /* Primary border color */
+    box-shadow: 0 4px 15px rgba(88, 166, 255, 0.25); /* Stronger initial blue glow */
+}
+
+.db-upload-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(88, 166, 255, 0.4);
+}
+
+.db-upload-icon {
+    color: #58a6ff;
+    flex-shrink: 0;
+}
+
+.db-upload-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 0 0 5px 0;
+}
+
+.db-upload-desc {
+    font-size: 15px;
+    color: #a8b2c4;
+    margin: 0;
+}
+
+/* --- Stats Row --- */
+.db-stats-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.db-stat-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    min-height: 100px;
+}
+
+.db-stat-card h4 {
+    font-size: 15px;
+    color: #8b949e;
+    margin: 0;
+    font-weight: 500;
+}
+
+.db-stat-number {
+    font-size: 36px;
+    font-weight: 700;
+    color: #00d1c1; /* Teal highlight for numbers */
+    line-height: 1;
+    margin: 5px 0 0 0;
+}
+
+/* --- Case List Section --- */
+.db-section-title {
+    font-size: 22px;
+    font-weight: 600;
+    color: #c9d1d9;
+    margin-bottom: 20px;
+    padding-left: 5px;
+}
+
+.db-case-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.db-case-card {
+    padding: 25px;
+}
+
+.db-case-card h4 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #58a6ff;
+    margin: 0 0 8px 0;
+}
+
+.db-case-card p {
+    font-size: 13px;
+    color: #8b949e;
+    margin: 0 0 10px 0;
+}
+
+.db-case-status {
+    display: inline-block;
+    padding: 4px 10px;
+    background-color: #30363d;
+    color: #c9d1d9;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+
+/* --- Notifications Section --- */
+.db-notifs {
+    padding: 30px;
+}
+
+.db-notifs h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #c9d1d9;
+    margin-top: 0;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #30363d;
+    padding-bottom: 10px;
+}
+
+.db-notif-item {
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    font-size: 15px;
+    border-left: 5px solid; /* Use for color coding */
+    transition: background-color 0.2s;
+}
+
+.db-notif-item:last-child {
+    margin-bottom: 0;
+}
+
+/* Color Coding for Notifications */
+.db-notif-item.warn {
+    background-color: rgba(255, 152, 0, 0.1); /* Amber/Orange subtle background */
+    border-left-color: #ff9800;
+}
+
+.db-notif-item.info {
+    background-color: rgba(88, 166, 255, 0.1); /* Blue subtle background */
+    border-left-color: #58a6ff;
+}
+
+.db-notif-item.success {
+    background-color: rgba(0, 209, 193, 0.1); /* Teal/Green subtle background */
+    border-left-color: #00d1c1;
+}

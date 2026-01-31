@@ -1,0 +1,241 @@
+/* ============================================================
+   LAYOUT & WRAPPERS (Space Fixes)
+   ============================================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.cs-main-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensures full height */
+  background-color: #0d1117;
+  overflow-x: hidden;
+}
+
+.cs-page-wrapper {
+  width: 100%;
+  flex: 1; /* This pushes the footer to the bottom */
+  background-color: #0d1117;
+  /* Top padding for header, 0 padding for bottom to touch footer */
+  box-sizing: border-box;
+  margin: 0 auto;
+  color: #c9d1d9;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ============================================================
+   TOP BAR (Margin set to 0 to remove gap above)
+   ============================================================ */
+.cs-topbar {
+  background-color: #161b22;
+  border-bottom: 3px solid #30363d;
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.2em;
+  font-weight: 700;
+  color: #58a6ff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  border-radius: 8px;
+  margin: 0 0 20px 0; /* Removed top margin */
+}
+
+.cs-topbar-status {
+  font-size: 0.8em;
+  font-weight: 400;
+}
+
+.status-online {
+  color: #38c172;
+  margin-left: 5px;
+}
+
+/* ============================================================
+   LAYOUT GRID
+   ============================================================ */
+.cs-root {
+  display: grid;
+  grid-template-columns: 2fr 4fr 2fr;
+  gap: 20px;
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  padding-bottom: 40px; /* Space between content and footer note */
+}
+
+.cs-left, .cs-middle, .cs-right {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ============================================================
+   CARD STYLES (Glow UI)
+   ============================================================ */
+.cs-card {
+  padding: 20px;
+  background-color: #161b22;
+  border-radius: 12px;
+  border: 1px solid #30363d;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glow-card:hover {
+  border-color: #58a6ff50;
+  box-shadow: 0 0 15px rgba(88,166,255,0.3);
+}
+
+.cs-heading, .cs-subheading, .cs-section-title {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.cs-heading, .cs-subheading { color: #58a6ff; }
+.cs-section-title { color: #c9d1d9; }
+
+/* ============================================================
+   CIRCLE CHART STYLES
+   ============================================================ */
+.cs-big-chart-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.cs-circle-wrapper {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.cs-circle-svg {
+  transform: rotate(-90deg);
+  overflow: visible;
+}
+
+.cs-ring-bg { stroke: #21262d; }
+.cs-ring-progress { filter: drop-shadow(0 0 5px rgba(88,166,255,0.7)); stroke-linecap: round; }
+
+.cs-circle-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background: rgba(22,27,34,0.7);
+  backdrop-filter: blur(4px);
+  padding: 20px;
+  width: calc(100% - 48px);
+  height: calc(100% - 48px);
+}
+
+.cs-circle-value {
+  font-size: 2.8em;
+  font-weight: 700;
+  color: #58a6ff;
+  text-shadow: 0 0 8px #58a6ff80;
+}
+
+.percent-sign { font-size: 0.6em; vertical-align: top; font-weight: 500; }
+.cs-circle-caption { font-size: 0.85em; color: #8b949e; text-align: center; margin-top: 10px; }
+
+/* ============================================================
+   MIDDLE SECTION LISTS
+   ============================================================ */
+.cs-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  padding: 10px 0;
+  margin-bottom: 20px;
+  border-bottom: 1px dashed #30363d;
+}
+
+.cs-summary-item {
+  background-color: #0d1117;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 0.9em;
+  border-left: 3px solid #58a6ff;
+}
+
+.cs-mini-card {
+  padding: 15px;
+  border-radius: 8px;
+  transition: transform 0.2s ease;
+}
+
+.red-card { background-color: #3b1717; border-left: 5px solid #ff4444; }
+.green-card { background-color: #1a3b17; border-left: 5px solid #4caf50; }
+
+.cs-footer-note {
+  font-size: 0.75em;
+  color: #58a6ff;
+  text-align: right;
+  margin-top: auto; /* Pushes note to bottom of content area */
+  padding: 20px 0;
+  border-top: 1px dashed #30363d;
+}
+
+/* ============================================================
+   TIMELINE & NOTIFICATIONS
+   ============================================================ */
+.timeline-item {
+  position: relative;
+  padding-left: 20px;
+  padding-bottom: 15px;
+  font-size: 0.9em;
+  color: #8b949e;
+  border-left: 2px solid #30363d;
+}
+
+.active-timeline::before {
+  background-color: #58a6ff;
+  box-shadow: 0 0 8px #58a6ff80;
+}
+
+.cs-notif {
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 0.85em;
+  margin-bottom: 10px;
+}
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+.cs-btn {
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  text-transform: uppercase;
+}
+
+.cs-btn-blue { background-color: #58a6ff; color: #0d1117; }
+.cs-btn-green { background-color: #38c172; color: #0d1117; }
+.cs-btn-orange { background-color: #ff9800; color: #0d1117; }
+
+/* ============================================================
+   RESPONSIVENESS
+   ============================================================ */
+@media (max-width: 1200px) { .cs-root { grid-template-columns: 1fr 2fr 1fr; } }
+@media (max-width: 900px) {
+  .cs-root { grid-template-columns: 1fr; }
+  .cs-page-wrapper { padding-top: 70px; }
+}

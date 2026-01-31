@@ -1,0 +1,232 @@
+/* ========================
+   1. GLOBAL & WRAPPER STYLES (FULL PAGE COVERAGE)
+   ======================== */
+.scf-wrapper {
+    /* Set to full width and height to cover the page */
+    width: 100%; 
+    min-height: 100vh; /* Ensures the background covers the entire viewport height */
+    margin: 0; /* Remove default margins */
+    padding: 30px; 
+    box-sizing: border-box; /* Ensures padding is included in the total width/height */
+
+    /* Dark mode styling for high-tech/AI theme */
+    background-color: #0d1117; 
+    color: #c9d1d9; /* Light text color */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+/* ========================
+   2. HEADER STYLES
+   ======================== */
+.scf-header {
+    margin-bottom: 2.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid #30363d; /* Subtle divider */
+}
+
+.scf-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #58a6ff; /* Primary blue color */
+    display: flex;
+    align-items: center;
+}
+
+.scf-icon {
+    font-size: 1.5em;
+    margin-right: 0.5rem;
+    vertical-align: middle;
+}
+
+.scf-subtitle {
+    color: #c9d1d9;
+    font-weight: 400;
+    margin-left: 0.5rem;
+}
+
+.scf-tagline {
+    color: #8b949e;
+    font-size: 1em;
+    margin-top: 5px;
+}
+
+/* ========================
+   3. SEARCH AREA
+   ======================== */
+.scf-search-area {
+    /* Limits search bar width and centers it */
+    max-width: 900px; 
+    margin: 0 auto 1.5rem;
+    display: flex;
+    gap: 10px;
+}
+
+.scf-input {
+    flex-grow: 1;
+    padding: 0.75rem 1.25rem;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    border: 1px solid #30363d;
+    background-color: #161b22;
+    color: #c9d1d9;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.scf-input::placeholder {
+    color: #8b949e;
+}
+
+.scf-input:focus {
+    outline: none;
+    border-color: #58a6ff;
+    box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.3);
+}
+
+.scf-button {
+    padding: 0.75rem 2rem;
+    font-size: 1.1rem;
+    background-color: #58a6ff;
+    color: #0d1117;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.scf-button:hover {
+    background-color: #79c0ff;
+    transform: translateY(-2px);
+}
+
+/* ========================
+   4. RESULTS & GRID
+   ======================== */
+.scf-results {
+    /* Centers the results content and prevents extreme stretching */
+    max-width: 1600px; 
+    margin: 0 auto; 
+}
+
+.scf-results-info {
+    margin-bottom: 1.5rem;
+    color: #8b949e;
+    border-bottom: 1px dashed #30363d;
+    padding-bottom: 10px;
+}
+
+.scf-case-grid {
+    display: grid;
+    /* Responsive grid: min size 300px, fills available space */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* ========================
+   5. CASE CARD STYLES (WITH COLOR CODING & ANIMATION)
+   ======================== */
+.scf-case-card {
+    background-color: #161b22;
+    border-radius: 12px;
+    border: 1px solid #30363d;
+    padding: 20px;
+    line-height: 1.5;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.scf-case-card:hover {
+    transform: translateY(-5px);
+    border-color: #58a6ff80;
+    box-shadow: 0 10px 25px rgba(88, 166, 255, 0.2);
+}
+
+.scf-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+/* Relevance Score Color Coding (Handled by inline style in JSX) */
+.scf-relevance-score {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #0d1117; 
+    padding: 4px 10px;
+    border-radius: 6px;
+}
+
+.scf-court {
+    font-size: 0.85rem;
+    color: #79c0ff;
+    font-weight: 600;
+}
+
+.scf-case-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #c9d1d9;
+    margin-bottom: 5px;
+    overflow-wrap: break-word;
+}
+
+.scf-case-id {
+    color: #8b949e;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    display: block;
+}
+
+.scf-case-description {
+    font-size: 0.95rem;
+    color: #a0a8b3;
+    flex-grow: 1; 
+}
+
+.scf-view-details {
+    margin-top: 15px;
+    align-self: flex-start;
+    background: none;
+    border: none;
+    color: #58a6ff;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.scf-view-details:hover {
+    color: #79c0ff;
+    transform: translateX(5px);
+}
+
+/* ========================
+   6. RESPONSIVE DESIGN
+   ======================== */
+
+@media (max-width: 600px) {
+    .scf-wrapper {
+        padding: 15px;
+    }
+    .scf-title {
+        font-size: 1.5rem;
+    }
+    .scf-search-area {
+        /* Stack input and button vertically */
+        flex-direction: column;
+    }
+    .scf-input {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .scf-button {
+        width: 100%;
+    }
+    .scf-case-grid {
+        gap: 15px;
+    }
+}

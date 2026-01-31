@@ -1,0 +1,14 @@
+
+/* index.css or App.css */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* hide horizontal scrollbar */
+}
+
+#root {
+  min-height: 100vh; /* full viewport height */
+  display: flex;
+  flex-direction: column;
+}

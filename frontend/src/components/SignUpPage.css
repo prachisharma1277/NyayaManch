@@ -1,0 +1,189 @@
+/* --- Outer container (for centering and background context) --- */
+.formCardContainer {
+  /* Mimics the dark, starry background for context */
+  background: linear-gradient(135deg, #1e2a44, #0a111f); 
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+.login-constellation-overlay .star {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: #c0d9ff;
+  border-radius: 50%;
+  opacity: 0.3;
+  box-shadow: 0 0 6px 1px rgba(192, 217, 255, 0.6);
+  animation: twinkle 3s infinite ease-in-out;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.2; transform: scale(1); }
+  50%      { opacity: 0.4; transform: scale(1.3); }
+}
+
+
+/* generate faint lines between close stars with a pseudo-element trick */
+.login-constellation-overlay {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at top, #020617, #000);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  z-index: 1;
+}
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.7;
+  animation: twinkle 4s infinite ease-in-out;
+  box-shadow: 0 0 6px white;
+}
+@keyframes twinkle {
+  0%,100% {
+    opacity: .2;
+    transform: scale(.8);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.5);
+  }
+}
+.login-constellation-overlay::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+  background-size: 120px 120px;
+  opacity: .25;
+}
+.login-constellation-overlay {
+  animation: drift 60s linear infinite;
+}
+
+@keyframes drift {
+  from { background-position: 0 0; }
+  to { background-position: 1000px 600px; }
+}
+/* --- The actual sign up card --- */
+.formCard {
+  background-color: white;
+  padding: 40px;
+  border-radius: 10px;
+  /* Soft shadow for the floating effect */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3); 
+  width: 100%;
+  max-width: 400px; /* Max width for the card */
+  text-align: center;
+}
+
+/* --- Welcome Text Styles (Reused from Login) --- */
+.welcomeText {
+  margin-bottom: 30px;
+}
+
+.welcomeText h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #333;
+  margin: 0;
+}
+
+.welcomeText p {
+  font-size: 14px;
+  color: #666;
+  margin-top: 5px;
+}
+
+/* --- Input Group Styling (Reused from Login) --- */
+.inputGroup {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.inputField {
+  width: 100%;
+  padding: 12px 12px 12px 45px; /* Padding on the left for the icon */
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+.inputField:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 0 1px #007bff;
+}
+
+.inputIcon {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #999;
+  font-size: 18px;
+}
+
+/* --- Sign Up Button Styling (Using the orange color from the header button) --- */
+.signupButton {
+  width: 100%;
+  padding: 12px;
+  background-color: #f7b731; /* Use the distinct orange color from the navbar 'Sign Up' button */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s;
+}
+
+.signupButton:hover {
+  background-color: #e5a620; /* Slightly darker orange on hover */
+}
+
+/* --- Login Link Styling --- */
+.loginLink {
+  margin-top: 25px;
+  font-size: 14px;
+  color: #666;
+}
+
+.loginLink a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 500;
+}
+/* Back to home (bottom) */
+.backHomeBottom {
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.backHomeBottom a {
+  color: #999;
+  text-decoration: none;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.backHomeBottom a:hover {
+  color: #007bff;
+  text-decoration: underline;
+}

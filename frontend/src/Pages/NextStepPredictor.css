@@ -1,0 +1,255 @@
+/* NextStepPredictor.css - Ultra-Modern Predictive Dashboard */
+
+/* --- Color Palette Reminder --- */
+/* Page Background: #0d1117 (Very Dark) */
+/* Card Background: #161b22 */
+/* Primary Text: #c9d1d9 */
+/* Accent Blue: #58a6ff */
+/* Success/Go (Teal): #00d1c1 */
+/* Warning/Time: #FF9800 */
+/* Critical/Stop: #f44336 */
+
+
+/* --- Global & Layout --- */
+.page {
+    background-color: #0d1117; 
+    color: #c9d1d9;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    padding: 40px; /* Increased padding */
+}
+
+.mainContent {
+    max-width: 1500px; /* Wider content area */
+    margin: 0 auto;
+}
+
+.header {
+    font-size: 38px;
+    font-weight: 800;
+    color: #00d1c1; /* Use Teal for a striking title */
+    margin-bottom: 5px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #00d1c150; /* Thicker, accented underline */
+}
+
+.subHeader {
+    font-size: 17px;
+    color: #a8b2c4;
+    margin-top: 0;
+    margin-bottom: 40px; /* Increased spacing */
+}
+
+.contentContainer {
+    display: flex;
+    gap: 40px;
+}
+
+.leftColumn {
+    flex: 2; 
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.rightColumn {
+    flex: 1.2; /* Slightly wider right column */
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* --- Card Styling --- */
+.card {
+    background-color: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    padding: 30px; /* Increased padding inside cards */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.cardTitle {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1.5px; /* Tighter letter spacing */
+    text-transform: uppercase;
+    color: #8b949e;
+    margin-bottom: 18px;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed #30363d;
+}
+
+.cardTitle.critical {
+    color: #f44336;
+    border-bottom-color: #f44336;
+}
+
+.cardTitle.warning {
+    color: #FF9800;
+    border-bottom-color: #FF9800;
+}
+
+/* --- Main Recommendation Card (Highlight) --- */
+.mainRecommendationCard {
+    background-color: #1f3957; /* Dark blue background for emphasis */
+    border: 2px solid #58a6ff; /* Strong blue border */
+    box-shadow: 0 10px 30px rgba(88, 166, 255, 0.3); /* Intense blue glow */
+}
+
+.mainRecommendationCard h2 {
+    font-size: 30px;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 15px 0;
+}
+
+.mainRecommendationCard p {
+    line-height: 1.6;
+    color: #c9d1d9;
+}
+
+.proceduralStrength {
+    display: inline-block;
+    background-color: #00d1c1; 
+    color: #0d1117;
+    font-weight: 800;
+    padding: 8px 18px;
+    border-radius: 4px;
+    margin-top: 20px;
+    font-size: 18px;
+    box-shadow: 0 2px 10px rgba(0, 209, 193, 0.5); /* Shadow on the strength badge */
+}
+
+.actionButton {
+    background-color: #ff9800; /* Use Warning color for action to make it pop */
+    color: #0d1117;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 30px;
+    margin-left: 20px;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.actionButton:hover {
+    background-color: #ffb74d;
+    transform: translateY(-3px);
+}
+
+/* Task Lists */
+.taskList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.taskItem {
+    font-size: 16px;
+    padding: 12px 0;
+    border-bottom: 1px dashed #30363d;
+    color: #c9d1d9;
+    /* Adding subtle icon style */
+}
+.taskItem.critical {
+    color: #f44336;
+    font-weight: 600;
+}
+
+/* --- Right Column Metrics (Visual Enhancements) --- */
+
+/* Case Particulars */
+.summaryRow {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px dotted #30363d;
+}
+
+.detailText {
+    font-size: 15px;
+    color: #a8b2c4;
+    margin: 0;
+}
+
+.detailText.bold {
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.detailText.warning {
+    color: #FF9800;
+    font-weight: 700;
+}
+
+/* Metric Cards */
+.metricCard {
+    text-align: center;
+    /* Adding a hover-to-highlight effect */
+    transition: border-color 0.3s;
+}
+
+.metricCard:hover {
+    border-color: #58a6ff;
+}
+
+.metricValue {
+    font-size: 65px;
+    font-weight: 900;
+    line-height: 1;
+    margin: 20px 0 10px 0;
+    transition: color 0.3s;
+}
+
+.metricCard p {
+    font-size: 14px;
+    margin: 0;
+}
+
+/* --- Micro-Chart / Progress Bar Visualization --- */
+
+.metricBarContainer {
+    width: 80%;
+    margin: 15px auto 20px auto;
+    height: 10px;
+    background-color: #30363d;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.metricBarFill {
+    height: 100%;
+    transition: width 1s ease-in-out;
+    border-radius: 5px;
+}
+
+/* --- Apply Metric Bars in React (Example structure to guide implementation) --- 
+The component must be updated to use this structure:
+
+<div className="metricBarContainer">
+    <div 
+        className="metricBarFill" 
+        style={{ 
+            width: `${caseData.adjournmentRisk}%`, 
+            backgroundColor: getMetricColor(caseData.adjournmentRisk, true) 
+        }}
+    ></div>
+</div>
+*/
+
+/* Footer Note */
+.note {
+    font-size: 14px;
+    color: #8b949e;
+    padding: 20px;
+    border-top: 1px solid #30363d;
+    background-color: #161b22;
+    border-radius: 12px;
+    margin-top: 40px;
+}
+
+.note strong {
+    color: #58a6ff;
+}
