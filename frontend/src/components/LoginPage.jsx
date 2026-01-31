@@ -4,7 +4,7 @@ import './LoginPage.css';
 import { FaEnvelope, FaLock } from 'react-icons/fa';
 import { GoogleLogin } from '@react-oauth/google'; // Google Component
 import axios from 'axios';
-
+ import { Link } from 'react-router-dom';
 const LoginPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -103,11 +103,13 @@ const LoginPage = () => {
         </div>
 
         <div className="signupLink">
-          Don&apos;t have an account? <a href="/signup">Sign Up</a>
+          Don&apos;t have an account?<Link to="/signup">Sign Up</Link>
         </div>
 
         <div className="backHomeBottom">
-          <a href="/">← Back to Home</a>
+         <Link to="/">
+                     <FaArrowLeft /> Back to Home
+                   </Link>
         </div>
 
       </div>
